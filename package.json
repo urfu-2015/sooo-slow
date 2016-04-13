@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Fractal of bad performance habits",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "optimize-svg": "svgo -f static/img/emoji/svg",
+    "bundle-svg": "cat static/img/emoji/svg/* > static/img/emoji/svg/_bundle.svg"
+  },
   "keywords": [
     "performance",
     "optimization",
@@ -18,5 +21,8 @@
     "jquery": "2.2.3",
     "jqueryui-browser": "1.10.2-1",
     "timing.js": "1.1.0"
+  },
+  "devDependencies": {
+    "svgo": "0.6.4"
   }
 }

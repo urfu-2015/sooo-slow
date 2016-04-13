@@ -8,9 +8,15 @@ h2 {
 }
 
 .emoji-list > img {
-	width: 130px;
-	size: 130px;
-	margin: 10px;
+    width: 130px;
+    size: 130px;
+    margin: 10px;
+}
+
+.emoji-list > svg {
+    width: 130px;
+    size: 130px;
+    margin: -170px 10px;
 }
 
 .cats-list > img {

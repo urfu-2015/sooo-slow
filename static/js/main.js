@@ -1,5 +1,5 @@
 $(function () {
-    var $images = $('.emoji-list > img');
+    var $images = $('.emoji-list > svg');
 
     initAnimation($images);
 
