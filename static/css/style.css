@@ -1,0 +1,22 @@
+body {
+	color: #777;
+	padding: 0 50px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.emoji-list > img {
+	width: 130px;
+	size: 130px;
+	margin: 10px;
+}
+
+.cats-list > img {
+	width: 600px;
+	height: 400px;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+}

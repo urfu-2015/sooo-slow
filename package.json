@@ -1,0 +1,20 @@
+{
+  "name": "sooo-slow",
+  "version": "0.0.1",
+  "description": "Fractal of bad performance habits",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "performance",
+    "optimization",
+    "sandbox"
+  ],
+  "author": "Roman Paradeev <sameoldmadness@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "express": "4.13.4",
+    "jquery": "2.2.3",
+    "jqueryui-browser": "1.10.2-1"
+  }
+}
