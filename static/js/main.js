@@ -5,7 +5,10 @@ $(function () {
 
     setInterval(writeRandomFibonacciNumber, 10 * 1000);
 
-    window.onload = sendRumData();
+    window.onload = function () {
+        sendRumData();
+        lazyLoadImages();
+    };
 
     function writeRandomFibonacciNumber() {
        var number = getRandomInt(35, 42);
@@ -54,13 +57,21 @@ $(function () {
             return;
         }
 
-        fetch('/rum', {
+        window.fetch && fetch('/rum', {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
             method: "POST",
             body: JSON.stringify(timing.getTimes())
+        });
+    }
+
+    function lazyLoadImages() {
+        $('img').each(function () {
+            var $img = $(this);
+
+            $img.attr('src', $img.data('src'));
         });
     }
 });

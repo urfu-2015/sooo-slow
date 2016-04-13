@@ -7,7 +7,8 @@
     "optimize-svg": "svgo -f static/img/emoji/svg",
     "bundle-svg": "cat static/img/emoji/svg/* > static/img/emoji/svg/_bundle.svg",
     "resize-png": "mogrify -resize 600 static/img/cats/*.jpg",
-    "optimize-png": "imagemin --progressive static/img/cats/* static/img/cats"
+    "optimize-png": "imagemin --progressive static/img/cats/* static/img/cats",
+    "remove-unused-css": "uncss http://localhost:8080/showcase > static/css/bundle.css"
   },
   "keywords": [
     "performance",
@@ -21,11 +22,11 @@
     "bootstrap": "3.3.6",
     "express": "4.13.4",
     "jquery": "2.2.3",
-    "jqueryui-browser": "1.10.2-1",
     "timing.js": "1.1.0"
   },
   "devDependencies": {
     "imagemin-cli": "2.1.0",
-    "svgo": "0.6.4"
+    "svgo": "0.6.4",
+    "uncss": "0.13.0"
   }
 }
