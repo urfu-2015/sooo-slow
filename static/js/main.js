@@ -5,6 +5,8 @@ $(function () {
 
     setInterval(writeRandomFibonacciNumber, 10 * 1000);
 
+    window.onload = sendRumData();
+
     function writeRandomFibonacciNumber() {
        var number = getRandomInt(35, 42);
        var result = fib(number);
@@ -42,5 +44,23 @@ $(function () {
                 rotationAngle += 1;
             }
         }, 0);
+    }
+
+    function sendRumData() {
+        var times = timing.getTimes();
+
+        if (times.loadEventTime <= 0) {
+            setTimeout(sendRumData, 500);
+            return;
+        }
+
+        fetch('/rum', {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(timing.getTimes())
+        });
     }
 });
