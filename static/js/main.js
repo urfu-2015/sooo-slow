@@ -3,18 +3,32 @@ $(function () {
 
     initAnimation($images);
 
-    setInterval(writeRandomFibonacciNumber, 10 * 1000);
+    initWorker();
 
     window.onload = function () {
         sendRumData();
         lazyLoadImages();
     };
 
-    function writeRandomFibonacciNumber() {
-       var number = getRandomInt(35, 42);
-       var result = fib(number);
+    function initWorker() {
+        var myWorker = new Worker("js/worker.js");
 
-       console.log('Fib(' + number + ') = ' + result);
+        setInterval(function () {
+            requestFibonacciNumber(myWorker);
+        }, 10 * 1000);
+
+        myWorker.onmessage = function (event) {
+            var number = event.data[0]
+            var result = event.data[1];
+
+            console.log('Fib(' + number + ') = ' + result);
+        }
+    }
+
+    function requestFibonacciNumber(worker) {
+        var number = getRandomInt(35, 42);
+
+        worker.postMessage(number);
     }
 
     function getRandomInt(min, max) {
