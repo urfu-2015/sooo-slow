@@ -10,6 +10,20 @@
     </style>
 </head>
 <body>
-    <a href="/showcase">Showcase</a>
+    <a href="/showcase">Showcase</a><br>
+    <canvas id="qr"></canvas>
+
+    <script src="vendor/qrcode/build/qrcode.js"></script>
+    <script>
+        var qrcodedraw = new qrcodelib.qrcodedraw();
+        var canvas = document.getElementById('qr');
+        var text = window.location.href + 'showcase';
+
+        qrcodedraw.draw(canvas, text, function (error) {
+            if (error) {
+                console.log(error);
+            }
+        });
+    </script>
 </body>
 </html>

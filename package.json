@@ -4,6 +4,7 @@
   "description": "Fractal of bad performance habits",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
     "optimize-svg": "svgo -f static/img/emoji/svg",
     "bundle-svg": "cat static/img/emoji/svg/* > static/img/emoji/svg/_bundle.svg",
     "resize-png": "mogrify -resize 600 static/img/cats/*.jpg",
@@ -23,6 +24,7 @@
     "compression": "1.6.1",
     "express": "4.13.4",
     "jquery": "2.2.3",
+    "qrcode": "0.4.2",
     "timing.js": "1.1.0"
   },
   "devDependencies": {
